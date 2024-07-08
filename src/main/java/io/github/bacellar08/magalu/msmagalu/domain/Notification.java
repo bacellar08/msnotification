@@ -15,8 +15,12 @@ public class Notification {
 
     private String message;
 
-    private Status status;
+    private String destination;
 
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.PENDING;
+
+    @Enumerated(EnumType.STRING)
     private Channel channel;
 
     public Notification() {
@@ -44,6 +48,14 @@ public class Notification {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public Status getStatus() {
