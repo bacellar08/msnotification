@@ -56,7 +56,7 @@ public class NotificationService {
         notificationRepository.saveAll(notifications);
     }
 
-    private void consumeNotification(Notification notification) {
+    public void consumeNotification(Notification notification) {
 
         if (notification.getStatus() == Status.ERROR) {
             notification.setStatus(Status.CANCELED);
