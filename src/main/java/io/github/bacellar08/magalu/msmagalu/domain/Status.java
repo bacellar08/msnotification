@@ -17,7 +17,7 @@ public enum Status {
                 return status;
             }
         }
-        throw new IllegalArgumentException("Unknown enum type " + value);
+        throw new IllegalArgumentException("Status inválido " + value);
     }
 
     @JsonValue

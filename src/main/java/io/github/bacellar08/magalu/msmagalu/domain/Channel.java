@@ -17,7 +17,7 @@ public enum Channel {
                 return channel;
             }
         }
-        throw new IllegalArgumentException("Unknown enum type " + value);
+        throw new IllegalArgumentException("Canal Inválido " + value);
     }
 
     @JsonValue
