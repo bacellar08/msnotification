@@ -7,6 +7,7 @@ public enum Status {
 
     PENDING,
     SUCCESS,
+    ERROR,
     CANCELED;
 
     @JsonCreator

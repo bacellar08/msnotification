@@ -5,6 +5,8 @@ import io.github.bacellar08.magalu.msmagalu.service.NotificationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/notification")
 public class NotificationController {
@@ -26,4 +28,19 @@ public class NotificationController {
 
         return ResponseEntity.badRequest().build();
     }
+
+    @GetMapping
+    public ResponseEntity<List<Notification>> getNotifications() {
+        var notifications = notificationService.getAllNotifications();
+
+        return ResponseEntity.ok(notifications);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteNotification(@PathVariable Long id) {
+        notificationService.deleteNotification(id);
+        return ResponseEntity.noContent().build();
+    }
+
+
 }
